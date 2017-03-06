@@ -1,34 +1,40 @@
 import React, { Component } from 'react';
 import _  from 'lodash';
-import './App.css';
 
-fetch('/ancestors.json')
-  .then( (response) => response.json() )
-  .then( (json) => {
-    console.log('loaded json');
-    window.ancestorData = json
-  });
+import './App.css';
+import PagePicker from './pagePicker.js'
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { pageTitle: '' };
+    this.state = { pageTitle: '', loaded: false };
+    this.pagePicker = new PagePicker();
+    this.pagePicker.loadAncestorData().then(() => {
+      this.pagePicker.updateFilters(['United States of America', 'Europe', 'Africa'], ['Asia']);
+      this.setState({loaded: true});
+    });
   }
   newRandom = () => {
-    console.log('App.newRandom called with this=', this);
-    const newPageTitle = _(window.ancestorData).keys().sample();
-    console.log('newPageTitle=', newPageTitle);
-    console.log('{ pageTitle: newPageTitle }', { pageTitle: newPageTitle });
+    console.log('App.newRandom');
+    const newPageTitle = this.pagePicker.randomPage();
     this.setState({ pageTitle: newPageTitle });
   }
 
   render() {
+    let content = 'loading...';
+    if (this.state.loaded) {
+      content = (
+        <div className='loaded'>
+          pageTitle= {this.state.pageTitle}
+          <Tree />
+          <RandomButton newRandom={this.newRandom.bind(this)} />
+          <Link pageTitle={this.state.pageTitle} />
+        </div>
+      )
+    }
     return (
       <div className="App">
-        pageTitle= {this.state.pageTitle}
-        <Tree />
-        <RandomButton newRandom={this.newRandom.bind(this)} />
-        <Link pageTitle={this.state.pageTitle} />
+        {content}
       </div>
     );
   }
@@ -48,7 +54,7 @@ class RandomButton extends Component {
   render() {
     return (
       <button onClick={this.props.newRandom}>
-        Random Button
+        Random
       </button>
     );
   }
