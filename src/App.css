@@ -18,6 +18,12 @@
   font-size: large;
 }
 
+/* TODO: actual layout */
+.wiki-frame {
+  width: 100%;
+  height: 1000px;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
