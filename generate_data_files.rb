@@ -60,10 +60,6 @@ root.children.each do |node|
 
   page_name = node.children.find {|child| child.name == 'title' }.text.strip
 
-  #if page_name == 'Flinders Ranges'
-    #binding.pry
-  #end
-
   redirect = node.children.find { |child| child.name == 'redirect' }
   if redirect
     redirect_to = redirect.attributes['title'].value.strip
@@ -119,10 +115,13 @@ root.children.each do |node|
   node_to_cannonical_name[normalize(page_name)] = page_name
 end
 
+puts 'calculating done'
+
 #first_bad = node_to_parent.keys.find { |title| !TOP_LEVEL.map(&:downcase).include? find_path(title, node_to_parent, node_to_redirect).last }
 File.open('data/node_to_parent.json', 'w'){ |f| f << node_to_parent.to_json }
 File.open('data/node_to_redirect.json', 'w'){ |f| f << node_to_redirect.to_json }
 File.open('data/node_to_cannonical_name.json', 'w'){ |f| f << node_to_cannonical_name.to_json }
 
+binding.pry
 
 puts 'done'
