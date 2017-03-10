@@ -7,7 +7,7 @@ class FilterPanel extends Component {
     return (
       <div className='FilterPanel'>
         <RandomButton />
-        <FilterEditor pages={this.props.pages} />
+        <FilterEditor pages={this.props.pages} filterStore={this.props.filterStore} />
       </div>
     )
   }
@@ -17,8 +17,8 @@ class FilterEditor extends Component {
   render() {
     return (
       <div className='FilterEditor'>
-        <AddFilter pages={this.props.pages}/>
-        <FilterList />
+        <AddFilter pages={this.props.pages} filterStore={this.props.filterStore} />
+        <FilterList filterStore={this.props.filterStore} />
       </div>
     )
   }

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import _  from 'lodash';
+import _ from 'lodash';
+
+import FilterStore from './filter_store.js'
 
 import FilterPanel from './filter_panel.js'
 import './filter_panel.css'
@@ -17,6 +19,7 @@ class App extends Component {
         this.pagePicker.updateFilters([],[]);
         this.setState({loaded: true});
       } );
+    this.filterStore = new FilterStore();
   }
   newRandom = () => {
     console.log('App.newRandom');
@@ -28,7 +31,7 @@ class App extends Component {
     if (this.state.loaded) {
       return (
         <div className="App">
-          <FilterPanel pages={this.pagePicker.filtered} />
+          <FilterPanel pages={this.pagePicker.filtered} filterStore={this.filterStore} />
           <WikiFrame />
         </div>
       );

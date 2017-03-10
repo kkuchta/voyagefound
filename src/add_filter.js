@@ -7,7 +7,7 @@ import './add_filter.css';
 class AddFilter extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: '' };
+    this.state = { value: '', selected: null };
 
     // This is a little ugly, but it works:
     // 1. Build an index of all pages by first letter so we can narrow down our
@@ -65,13 +65,20 @@ class AddFilter extends Component {
   }
 
   onChange(event, value) {
-    this.setState({ value });
+    this.setState({ value, selected: null });
+    //const page = this.getItems().find( (item) => this.getItemValue(item) == 
+    console.log('changed');
   }
   onSelect(value, item) {
-    this.setState({value: value.toLowerCase()});
+    this.setState({value: value.toLowerCase(), selected: item});
+  }
+  addFilter(isInclude) {
+    const filter = this.state.selected[0];
+    this.props.filterStore.addFilter(filter, isInclude);
   }
 
   render() {
+    const buttonStyle = this.state.selected ? {} : { display: 'none' };
     return (
       <div className='AddFilter'>
         <Autocomplete
@@ -84,6 +91,11 @@ class AddFilter extends Component {
           shouldItemRender={this.shouldItemRender}
           renderItem={this.renderItem}
         />
+        <div style={buttonStyle}>
+          <button onClick={this.addFilter.bind(this, true)}>+only</button>
+          <button onClick={this.addFilter.bind(this, false)}>+except</button>
+        </div>
+        selected= {this.state.selected && this.state.selected[0]}
       </div>
     )
   }
