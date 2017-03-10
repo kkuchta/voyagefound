@@ -19,9 +19,6 @@ class PagePicker {
     console.log('Include:', included);
     this.filtered = [];
     _.each(this.ancestorData, (ancestors, page) => {
-      //if (page.match(/united/i)) {
-        //debugger
-      //}
       let ancestors_plus_page = [page].concat(ancestors || []);
       if (included.length && !_.intersection(included, ancestors_plus_page).length) return;
       if (excluded.length && _.intersection(excluded, ancestors_plus_page).length) return;

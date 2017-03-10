@@ -14,7 +14,6 @@ class FilterPanel extends Component {
 }
 
 class FilterEditor extends Component {
-  //console.log('FilterEditor with', this.props.places);
   render() {
     return (
       <div className='FilterEditor'>

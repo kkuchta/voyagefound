@@ -46,7 +46,9 @@ class AddFilter extends Component {
   }
 
   shouldItemRender(page, value) {
-    return _.startsWith(page[0].toLowerCase(), value.toLowerCase());
+    //return _.startsWith(page[0].toLowerCase(), value.toLowerCase());
+    const pageValue = this.getItemValue(page);
+    return _.startsWith(pageValue, value.toLowerCase());
   }
 
   renderItem(item, isHighlighted) {
@@ -58,8 +60,15 @@ class AddFilter extends Component {
     </div>);
   }
 
+  getItemValue(item) {
+    return item.join(' < ').toLowerCase();
+  }
+
   onChange(event, value) {
     this.setState({ value });
+  }
+  onSelect(value, item) {
+    this.setState({value: value.toLowerCase()});
   }
 
   render() {
@@ -69,8 +78,9 @@ class AddFilter extends Component {
           items={this.getItems()}
           value={this.state.value}
           onChange={this.onChange.bind(this)}
+          onSelect={this.onSelect.bind(this)}
           sortItems={this.sortItems}
-          getItemValue={(item) => item[0]}
+          getItemValue={this.getItemValue}
           shouldItemRender={this.shouldItemRender}
           renderItem={this.renderItem}
         />
