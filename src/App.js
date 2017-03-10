@@ -20,10 +20,13 @@ class App extends Component {
         this.setState({loaded: true});
       } );
     this.filterStore = new FilterStore();
+    this.filterStore.addListener( () => {
+      const filters = this.filterStore.getFilters();
+      this.pagePicker.updateFilters(filters.exclude, filters.include);
+    });
   }
   newRandom = () => {
-    console.log('App.newRandom');
-    const newPageTitle = this.pagePicker.randomPage();
+    const newPageTitle = this.pagePicker.randomPage()[0];
     this.setState({ pageTitle: newPageTitle });
   }
 
@@ -31,8 +34,8 @@ class App extends Component {
     if (this.state.loaded) {
       return (
         <div className="App">
-          <FilterPanel pages={this.pagePicker.filtered} filterStore={this.filterStore} />
-          <WikiFrame />
+          <FilterPanel pages={this.pagePicker.filtered} filterStore={this.filterStore} newRandom={this.newRandom} />
+          <WikiFrame pageTitle={this.state.pageTitle} />
         </div>
       );
     } else {
@@ -50,10 +53,10 @@ class WikiFrame extends Component {
     return "https://en.wikivoyage.org/wiki/" + pageTitle;
   }
   render() {
-    //return (
-      //<iframe className='WikiFrame' src={this.url(this.props.pageTitle)} />
-    //)
-    return (<div />)
+    return (
+      <iframe className='WikiFrame' src={this.url(this.props.pageTitle)} />
+    )
+    //return (<div />)
   }
 }
 

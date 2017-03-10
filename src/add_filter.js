@@ -67,7 +67,6 @@ class AddFilter extends Component {
   onChange(event, value) {
     this.setState({ value, selected: null });
     //const page = this.getItems().find( (item) => this.getItemValue(item) == 
-    console.log('changed');
   }
   onSelect(value, item) {
     this.setState({value: value.toLowerCase(), selected: item});
@@ -95,7 +94,6 @@ class AddFilter extends Component {
           <button onClick={this.addFilter.bind(this, true)}>+only</button>
           <button onClick={this.addFilter.bind(this, false)}>+except</button>
         </div>
-        selected= {this.state.selected && this.state.selected[0]}
       </div>
     )
   }

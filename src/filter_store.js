@@ -17,7 +17,6 @@ class FilterStore {
     const list = this.filters[isInclude ? 'include' : 'exclude'];
     list.push(filter);
     this.listeners.forEach( (callback) => callback.call() );
-    console.log('filters = ', this.filters);
   }
 
   removeFilter(filter, isInclude) {
