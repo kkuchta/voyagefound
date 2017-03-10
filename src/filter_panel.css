@@ -1,0 +1,13 @@
+.FilterPanel {
+  width: 500px;
+  height: 200px;
+  display: flex;
+}
+
+.FilterPanel .RandomButton {
+  /*TODO: make not look like butt*/
+  width: 200px;
+}
+.FilterPanel .FilterEditor {
+  flex-grow: 1;
+}

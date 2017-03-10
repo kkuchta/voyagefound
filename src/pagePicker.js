@@ -22,10 +22,10 @@ class PagePicker {
       //if (page.match(/united/i)) {
         //debugger
       //}
-      let ancestors_plus_page = (ancestors || []).concat([page]);
+      let ancestors_plus_page = [page].concat(ancestors || []);
       if (included.length && !_.intersection(included, ancestors_plus_page).length) return;
       if (excluded.length && _.intersection(excluded, ancestors_plus_page).length) return;
-      this.filtered.push(page);
+      this.filtered.push(ancestors_plus_page);
     });
     console.log('filtered=', this.filtered);
   }

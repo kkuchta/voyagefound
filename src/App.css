@@ -1,9 +1,14 @@
-.App {
-  text-align: center;
-}
-
-/* TODO: actual layout */
-.wiki-frame {
+body, html, #root, .App {
+  height: 100%;
   width: 100%;
-  height: 1000px;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+}
+.App .FilterPanel {
+  align-self: center;
+}
+.App .WikiFrame {
+  flex-grow: 1;
 }
