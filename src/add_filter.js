@@ -9,40 +9,46 @@ class AddFilter extends Component {
     super(props);
     this.state = { value: '' };
 
-    // TODO: update this when props.pages changes
-    // A simple 1-level index.  TODO: use a trie, or at least a deeper index to
-    // speed this thing up.
+    // This is a little ugly, but it works:
+    // 1. Build an index of all pages by first letter so we can narrow down our
+    //    search space.
+    // 2. Precompute the first 10 results for when a user types a single letter
+    //    so we can quickly return (rather than having to search all 2k or so
+    //    results for the letter `b`.
     this.pageIndex = _.groupBy(this.props.pages, (page) => {
       return page[0][0].toLowerCase();
     });
+    this.firstLetterResults = {};
+    _.each(this.pageIndex, (pages, firstLetter) => {
+      this.firstLetterResults[firstLetter] = _.take(pages.sort(this.sortItems), 10);
+    });
     this.pageIndex[''] = [];
-    //console.log('pageIndex=', this.pageIndex);
-    console.log('contructor done');
   }
   getItems() {
-    console.log('getitems');
-    if (this.state.value == '') {
+    if (this.state.value === '') {
       return [];
     }
 
-    return this.pageIndex[this.state.value[0][0].toLowerCase()];
+    // Use the precomputed results if they've only typed one letter.
+    if (this.state.value.length === 1) {
+      return this.firstLetterResults[this.state.value[0].toLowerCase()];
+    }
+
+    // Otherwise search the full list of pages starting with the first letter
+    // of whatever they've typed
+    return this.pageIndex[this.state.value[0].toLowerCase()];
   }
-  sortItems(a, b, value) {
-    // From https://github.com/reactjs/react-autocomplete/blob/master/lib/utils.js
+
+  sortItems(a, b) {
     const aLower = a[0].toLowerCase();
     const bLower = b[0].toLowerCase();
-    //const valueLower = value.toLowerCase();
-    //const queryPosA = aLower.indexOf(valueLower);
-    //const queryPosB = bLower.indexOf(valueLower);
-    //if (queryPosA !== queryPosB) {
-      //return queryPosA - queryPosB;
-    //}
     return aLower < bLower ? -1 : 1;
   }
 
   shouldItemRender(page, value) {
     return _.startsWith(page[0].toLowerCase(), value.toLowerCase());
   }
+
   renderItem(item, isHighlighted) {
     return (<div
       className={isHighlighted ? 'highlighted' : ''}
@@ -53,7 +59,6 @@ class AddFilter extends Component {
   }
 
   onChange(event, value) {
-    console.log('onchange');
     this.setState({ value });
   }
 
