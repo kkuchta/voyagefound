@@ -1,0 +1,8 @@
+.FilterEditor {
+  display: flex;
+  flex-direction: row;
+}
+
+.FilterEditor .AddFilter {
+  width: 300px;
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AddFilter from './add_filter.js'
 import FilterList from './filter_list.js'
 import './random_button.css'
+import './filter_editor.css'
 
 class FilterPanel extends Component {
   render() {

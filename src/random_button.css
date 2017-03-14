@@ -1,18 +1,23 @@
 
 .RandomButton {
   width: 100px;
-  height: 50px;
-  line-height: 50px;
+  height: 75px;
+  line-height: 75px;
   text-align: center;
   background-color: #98C1D9;
   color: #3D5A80;
   border-radius: 10px;
   transition: 0.25s;
   box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 .RandomButton:hover {
   color: #98C1D9;
   background-color: #3D5A80;
+}
+.RandomButton:active {
+  transform: translate(0.5px,0.5px);
+  box-shadow: none;
 }
 
 /* RGB */
