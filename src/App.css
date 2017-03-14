@@ -5,9 +5,13 @@ body, html, #root, .App {
 .App {
   display: flex;
   flex-direction: column;
+  background-color: #E0FBFC;
+  color: #293241;
 }
 .App .FilterPanel {
-  align-self: center;
+  align-self: left;
+  height: 100px;
+  min-height: 100px;
 }
 .App .WikiFrame {
   flex-grow: 1;

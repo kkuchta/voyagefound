@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AddFilter from './add_filter.js'
 import FilterList from './filter_list.js'
+import './random_button.css'
 
 class FilterPanel extends Component {
   render() {
@@ -27,9 +28,9 @@ class FilterEditor extends Component {
 class RandomButton extends Component {
   render() {
     return (
-      <button className='RandomButton' onClick={this.props.newRandom}>
+      <div className='RandomButton' onClick={this.props.newRandom}>
         Random
-      </button>
+      </div>
     );
   }
 }
