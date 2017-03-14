@@ -18,25 +18,31 @@ class AddFilter extends Component {
     this.pageIndex = _.groupBy(this.props.pages, (page) => {
       return page[0][0].toLowerCase();
     });
-    this.firstLetterResults = {};
-    _.each(this.pageIndex, (pages, firstLetter) => {
-      this.firstLetterResults[firstLetter] = _.take(pages.sort(this.sortItems), 10);
-    });
+
     this.pageIndex[''] = [];
   }
   getItems() {
-    if (this.state.value === '') {
+    const value = this.state.value;
+    let firstLetter = value[0];
+
+    if (!firstLetter || firstLetter === '') {
       return [];
     }
 
-    // Use the precomputed results if they've only typed one letter.
-    if (this.state.value.length === 1) {
-      return this.firstLetterResults[this.state.value[0].toLowerCase()];
+    firstLetter = firstLetter.toLowerCase();
+
+    // Get all the pages starting with the same letter as our typed value.
+    let letterIndex = this.pageIndex[firstLetter]
+
+    // Our autocomplete lib doesn't handle it well when we put 2k items into it.
+    // So, when there are a lot of results (like when only one letter's been
+    // typed), let's just return the first 100.
+    if (value.length === 1) {
+      return _.take(letterIndex.sort(this.sortItems), 100);
     }
 
-    // Otherwise search the full list of pages starting with the first letter
-    // of whatever they've typed
-    return this.pageIndex[this.state.value[0].toLowerCase()];
+    // Let the autocomplete tool determine what to show
+    return this.pageIndex[firstLetter];
   }
 
   sortItems(a, b) {

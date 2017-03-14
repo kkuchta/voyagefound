@@ -12,8 +12,13 @@ class FilterList extends Component {
     const include = filters.include.map( (filter) => [true, filter] );
     const exclude = filters.exclude.map( (filter) => [false, filter] );
     this.setState({filters: include.concat(exclude)});
-    console.log('filterlist: ', include.concat(exclude));
   }
+
+  removeFilter (filter, isInclude) {
+    this.props.filterStore.removeFilter(filter, isInclude);
+    console.log('here');
+  }
+
   render() {
     // TODO: start filling in filterlist and addfilter
     // Maybe combine the two instead?
@@ -22,6 +27,7 @@ class FilterList extends Component {
       //return 'foo';
       return (<div key={filterPair[1]}>
         {filterPair[0] ? '+' : '-'} {filterPair[1]}
+        <span onClick={this.removeFilter.bind(this, filterPair[1], filterPair[0])}>X</span>
       </div>);
     } );
     return (
