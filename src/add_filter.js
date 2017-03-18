@@ -95,6 +95,7 @@ class AddFilter extends Component {
           getItemValue={this.getItemValue}
           shouldItemRender={this.shouldItemRender}
           renderItem={this.renderItem}
+          inputProps={{placeholder:'New Zealand...'}}
         />
         <div style={buttonStyle}>
           <button onClick={this.addFilter.bind(this, true)}>+only</button>

@@ -23,6 +23,8 @@ class FilterStore {
 
   addFilter(filter, isInclude) {
     const list = this.filters[isInclude ? 'include' : 'exclude'];
+    if (_.includes(list, filter)) return;
+
     list.push(filter);
     this.updateLocalStorage();
     this.listeners.forEach( (callback) => callback.call() );
