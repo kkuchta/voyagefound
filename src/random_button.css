@@ -2,7 +2,9 @@
 .RandomButton {
   width: 100px;
   height: 75px;
-  line-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   background-color: #98C1D9;
   color: #3D5A80;

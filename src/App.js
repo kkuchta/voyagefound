@@ -50,6 +50,8 @@ class App extends Component {
 
 class WikiFrame extends Component {
   url = (pageTitle) => {
+    if (!pageTitle || !pageTitle.length) return '';
+
     return "https://en.wikivoyage.org/wiki/" + pageTitle;
   }
   render() {

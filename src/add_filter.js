@@ -86,6 +86,7 @@ class AddFilter extends Component {
     const buttonStyle = this.state.selected ? {} : { display: 'none' };
     return (
       <div className='AddFilter'>
+        Filter pages by:
         <Autocomplete
           items={this.getItems()}
           value={this.state.value}
@@ -98,8 +99,8 @@ class AddFilter extends Component {
           inputProps={{placeholder:'New Zealand...'}}
         />
         <div style={buttonStyle}>
-          <button onClick={this.addFilter.bind(this, true)}>+only</button>
-          <button onClick={this.addFilter.bind(this, false)}>+except</button>
+          <div onClick={this.addFilter.bind(this, true)}>+include</div>
+          <div onClick={this.addFilter.bind(this, false)}>-exclude</div>
         </div>
       </div>
     )

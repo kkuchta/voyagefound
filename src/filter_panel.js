@@ -30,7 +30,9 @@ class RandomButton extends Component {
   render() {
     return (
       <div className='RandomButton' onClick={this.props.newRandom}>
-        Random
+        <div className='buttonText'>
+          Random<br />place
+        </div>
       </div>
     );
   }
