@@ -6,8 +6,8 @@ import FilterStore from './filter_store.js'
 import FilterPanel from './filter_panel.js'
 import './filter_panel.css'
 
-import './App.css';
-import PagePicker from './pagePicker.js'
+import './app.css';
+import PagePicker from './page_picker.js'
 
 class App extends Component {
   constructor(props) {
