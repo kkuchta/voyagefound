@@ -8,11 +8,17 @@ body, html, #root, .App {
   background-color: #E0FBFC;
   color: #293241;
 }
-.App .FilterPanel {
-  align-self: left;
-  height: 100px;
-  min-height: 100px;
+.App.compact .FilterPanel {
+  background-color: white;
 }
 .App .WikiFrame {
   flex-grow: 1;
+}
+
+.App.compact .expandedShow {
+  display: none;
+}
+
+.App.expanded .compactShow {
+  display: none;
 }

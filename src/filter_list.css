@@ -1,0 +1,13 @@
+.FilterList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.FilterList .label {
+  font-weight: bold;
+}
+
+.FilterList .list {
+  margin-left: 20px;
+}

@@ -1,7 +1,6 @@
-
-.RandomButton {
+.RandomButton .button {
   width: 100px;
-  height: 75px;
+  height: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,11 +12,11 @@
   box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
-.RandomButton:hover {
+.RandomButton .button:hover {
   color: #98C1D9;
   background-color: #3D5A80;
 }
-.RandomButton:active {
+.RandomButton .button:active {
   transform: translate(0.5px,0.5px);
   box-shadow: none;
 }

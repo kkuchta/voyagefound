@@ -6,3 +6,6 @@
 .FilterEditor .AddFilter {
   width: 350px;
 }
+.compact .FilterEditor .AddFilter {
+  display: none;
+}

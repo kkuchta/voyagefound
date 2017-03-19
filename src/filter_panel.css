@@ -7,6 +7,11 @@
 .FilterPanel .RandomButton {
   margin-right: 10px;
 }
-.FilterPanel .FilterEditor {
-  flex-grow: 1;
+
+.FilterPanel .toggleCompact {
+  margin-left: auto;
+}
+
+.compact .FilterPanel .AddFilter {
+  display: none;
 }

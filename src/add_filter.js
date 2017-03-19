@@ -15,6 +15,7 @@ class AddFilter extends Component {
     // 2. Precompute the first 10 results for when a user types a single letter
     //    so we can quickly return (rather than having to search all 2k or so
     //    results for the letter `b`.
+    //console.log('pages = ', this.props.pages.length);
     this.pageIndex = _.groupBy(this.props.pages, (page) => {
       return page[0][0].toLowerCase();
     });
