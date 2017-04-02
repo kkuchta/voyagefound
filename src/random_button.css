@@ -1,3 +1,7 @@
+.RandomButton {
+  display: flex;
+  flex-direction: column;
+}
 .RandomButton .button {
   width: 100px;
   height: 25px;

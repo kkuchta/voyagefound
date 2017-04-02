@@ -28,8 +28,8 @@ class FilterList extends Component {
       return (<ul> {
           filters[filterType].map((filter) =>
             <li key={filter}>
-              {filter}
-              <button onClick={this.removeFilter.bind(this, filter, filterType === 'include')}>X</button>
+              <i className='button fa fa-times' onClick={this.removeFilter.bind(this, filter, filterType === 'include')} />
+              <span className="filterName">{filter}</span>
             </li>
           )
         } </ul>)

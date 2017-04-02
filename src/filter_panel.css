@@ -10,6 +10,20 @@
 
 .FilterPanel .toggleCompact {
   margin-left: auto;
+  font-size: 30px;
+  width: 40px;
+  height: 35px;
+  text-align: center;
+  background-color: #98C1D9;
+  color: #3D5A80;
+  border-radius: 10px;
+  transition: 0.25s;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+}
+.FilterPanel .toggleCompact:hover{
+  color: #3D5A80
 }
 
 .compact .FilterPanel .AddFilter {

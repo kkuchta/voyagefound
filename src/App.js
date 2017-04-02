@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
+import 'font-awesome/css/font-awesome.css'
 
 import FilterStore from './filter_store.js'
 
@@ -39,8 +40,10 @@ class App extends Component {
 
   newRandom = () => {
     const newPage = this.pagePicker.randomPage()
-    // Todo: handle null random page (probably because of conflicting filters)
-    alert("Oh no- no page found!  You may have mutually exclusive filters (eg you're looking for places that are in China but not in Asia).  Try adjusting your filters and trying again.");
+    if (!newPage) {
+      // Todo: handle null random page (probably because of conflicting filters)
+      alert("Oh no- no page found!  You may have mutually exclusive filters (eg you're looking for places that are in China but not in Asia).  Try adjusting your filters and trying again.");
+    }
     const newPageTitle = newPage[0]
     this.setState({ pageTitle: newPageTitle });
   }
