@@ -1,0 +1,23 @@
+@import 'buttons.scss';
+
+.FilterPanel {
+  /*width: 500px;*/
+  display: flex;
+  padding: 10px;
+}
+
+.FilterPanel .RandomButton {
+  margin-right: 10px;
+}
+
+.FilterPanel .toggleCompact {
+  @include button;
+  margin-left: auto;
+  font-size: 30px;
+  width: 40px;
+  height: 35px;
+}
+
+.compact .FilterPanel .AddFilter {
+  display: none;
+}

@@ -18,3 +18,5 @@ yarn-error.log*
 
 # The datafile is pretty big, so let's just keep that out of git
 enwikivoyage*.xml
+
+/src/*.css

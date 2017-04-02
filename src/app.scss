@@ -1,21 +1,24 @@
 body, html, #root, .App {
   height: 100%;
-  width: 100%; }
-
+  width: 100%;
+}
 .App {
   display: flex;
   flex-direction: column;
   background-color: #E0FBFC;
-  color: #293241; }
-
+  color: #293241;
+}
 .App.compact .FilterPanel {
-  background-color: white; }
-
+  background-color: white;
+}
 .App .WikiFrame {
-  flex-grow: 1; }
+  flex-grow: 1;
+}
 
 .App.compact .expandedShow {
-  display: none; }
+  display: none;
+}
 
 .App.expanded .compactShow {
-  display: none; }
+  display: none;
+}

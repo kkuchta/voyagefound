@@ -1,0 +1,22 @@
+@import 'colors.scss';
+
+@mixin button {
+  display: flex;
+  background-color: $medium;
+  color: $dark;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+  transition: 0.25s;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  &:hover {
+    color: #98C1D9;
+    background-color: #3D5A80;
+  }
+  &:active {
+    transform: translate(0.5px, 0.5px);
+    box-shadow: none;
+  }
+}

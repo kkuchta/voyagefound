@@ -1,9 +1,11 @@
 .FilterEditor {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+}
 
 .FilterEditor .AddFilter {
-  width: 350px; }
-
+  width: 350px;
+}
 .compact .FilterEditor .AddFilter {
-  display: none; }
+  display: none;
+}

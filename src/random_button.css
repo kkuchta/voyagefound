@@ -1,29 +1,26 @@
 .RandomButton {
   display: flex;
-  flex-direction: column;
-}
+  flex-direction: column; }
+
 .RandomButton .button {
-  width: 100px;
-  height: 25px;
   display: flex;
+  background-color: #98C1D9;
+  color: #3D5A80;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #98C1D9;
-  color: #3D5A80;
   border-radius: 10px;
   transition: 0.25s;
   box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-}
-.RandomButton .button:hover {
-  color: #98C1D9;
-  background-color: #3D5A80;
-}
-.RandomButton .button:active {
-  transform: translate(0.5px,0.5px);
-  box-shadow: none;
-}
+  width: 100px;
+  height: 25px; }
+  .RandomButton .button:hover {
+    color: #98C1D9;
+    background-color: #3D5A80; }
+  .RandomButton .button:active {
+    transform: translate(0.5px, 0.5px);
+    box-shadow: none; }
 
 /* RGB */
 /*$color1: rgba(61, 90, 128, 1);*/

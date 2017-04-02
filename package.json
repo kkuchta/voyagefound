@@ -10,12 +10,15 @@
     "react-dom": "15.4.2"
   },
   "devDependencies": {
+    "node-sass": "^4.5.2",
     "react-scripts": "0.9.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-css": "node-sass src/ -o src/",
+    "watch-css": "npm run build-css && node-sass src/ -o src/ --watch --recursive"
   }
 }
