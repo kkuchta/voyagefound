@@ -83,25 +83,38 @@ class AddFilter extends Component {
     this.props.filterStore.addFilter(filter, isInclude);
   }
 
+  renderCreateFilter(isInclude) {
+    return (
+      <div className='createFilter' onClick={this.addFilter.bind(this, isInclude)}>
+        {
+          isInclude ?  <span><i className='fa fa-plus' />include</span>
+            : <span><i className='fa fa-minus' />exclude</span>
+        }
+      </div>
+    );
+  }
+
   render() {
     const buttonStyle = this.state.selected ? {} : { display: 'none' };
     return (
       <div className='AddFilter'>
-        Filter pages by:
-        <Autocomplete
-          items={this.getItems()}
-          value={this.state.value}
-          onChange={this.onChange.bind(this)}
-          onSelect={this.onSelect.bind(this)}
-          sortItems={this.sortItems}
-          getItemValue={this.getItemValue}
-          shouldItemRender={this.shouldItemRender}
-          renderItem={this.renderItem}
-          inputProps={{placeholder:'New Zealand...'}}
-        />
-        <div style={buttonStyle}>
-          <div onClick={this.addFilter.bind(this, true)}>+include</div>
-          <div onClick={this.addFilter.bind(this, false)}>-exclude</div>
+        <div className='labelAndInput'>
+          <span className='label'>Filter pages by:</span>
+          <Autocomplete
+            items={this.getItems()}
+            value={this.state.value}
+            onChange={this.onChange.bind(this)}
+            onSelect={this.onSelect.bind(this)}
+            sortItems={this.sortItems}
+            getItemValue={this.getItemValue}
+            shouldItemRender={this.shouldItemRender}
+            renderItem={this.renderItem}
+            inputProps={{placeholder:'New Zealand...'}}
+          />
+        </div>
+        <div className='createFilterButtons' style={buttonStyle}>
+          {this.renderCreateFilter(true)}
+          {this.renderCreateFilter(false)}
         </div>
       </div>
     )
