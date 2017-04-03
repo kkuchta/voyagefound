@@ -5,7 +5,10 @@
   display: flex;
   flex-direction: column;
 }
-.label {
+.AddFilter .labelAndInput {
+  display: flex;
+}
+.AddFilter .label {
   margin-top: 9px;
   margin-right: 5px;
 }
@@ -26,7 +29,7 @@
 }
 .AddFilter .createFilter {
   @include button;
-  width: 100px;
+  width: 80px;
   height: 20px;
   margin-right: 10px;
 }

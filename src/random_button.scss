@@ -3,12 +3,18 @@
 
 .RandomButton {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  margin-top: 9px;
+}
+.compact .RandomButton {
+  margin-top: 0;
+}
 
 .RandomButton .button {
   @include button
   width: 100px;
   height: 25px;
+  margin: 5px 0;
 }
 
 /* RGB */

@@ -87,8 +87,8 @@ class AddFilter extends Component {
     return (
       <div className='createFilter' onClick={this.addFilter.bind(this, isInclude)}>
         {
-          isInclude ?  <span><i className='fa fa-plus' />include</span>
-            : <span><i className='fa fa-minus' />exclude</span>
+          isInclude ?  <span><i className='fa fa-plus' />in</span>
+            : <span><i className='fa fa-minus' />not in</span>
         }
       </div>
     );
