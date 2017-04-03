@@ -4,20 +4,22 @@
   /*width: 500px;*/
   display: flex;
   padding: 10px;
+
+  .RandomButton {
+    margin-right: 10px;
+  }
+
+  .toggleCompact {
+    @include button;
+    margin-left: auto;
+    font-size: 30px;
+    width: 40px;
+    height: 35px;
+  }
 }
 
-.FilterPanel .RandomButton {
-  margin-right: 10px;
-}
-
-.FilterPanel .toggleCompact {
-  @include button;
-  margin-left: auto;
-  font-size: 30px;
-  width: 40px;
-  height: 35px;
-}
-
-.compact .FilterPanel .AddFilter {
-  display: none;
+.compact .FilterPanel {
+  .AddFilter {
+    display: none;
+  }
 }

@@ -4,39 +4,38 @@
   margin-left: 40px;
   display: flex;
   flex-direction: column;
-}
-.AddFilter .labelAndInput {
-  display: flex;
-}
-.AddFilter .label {
-  margin-top: 9px;
-  margin-right: 5px;
-}
-.AddFilter input {
-  //margin-top: 16px;
-  width: 300px;
-  height: 25px;
-  font-size: 20px;
-  border-radius: 4px;
-  padding: 5px 10px;
-  border: 1px solid rgba(152, 193, 217, 0.5);
-}
-.AddFilter .createFilterButtons {
-  display: flex;
-  flex-firection: row;
-  margin-left: 115px;
-  margin-top: 10px;
-}
-.AddFilter .createFilter {
-  @include button;
-  width: 80px;
-  height: 20px;
-  margin-right: 10px;
-}
-.AddFilter i {
-  margin-right: 5px;
-  font-size: 12px;
-}
-.highlighted {
-  color: red;
+  .labelAndInput {
+    display: flex;
+  }
+  .label {
+    margin-top: 9px;
+    margin-right: 5px;
+  }
+  input {
+    width: 300px;
+    height: 25px;
+    font-size: 20px;
+    border-radius: 4px;
+    padding: 5px 10px;
+    border: 1px solid rgba(152, 193, 217, 0.5);
+  }
+  .createFilterButtons {
+    display: flex;
+    flex-firection: row;
+    margin-left: 115px;
+    margin-top: 10px;
+  }
+  .createFilter {
+    @include button;
+    width: 80px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  i {
+    margin-right: 5px;
+    font-size: 12px;
+  }
+  .highlighted {
+    color: red;
+  }
 }

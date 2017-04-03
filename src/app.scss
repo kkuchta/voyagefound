@@ -7,18 +7,17 @@ body, html, #root, .App {
   flex-direction: column;
   background-color: #E0FBFC;
   color: #293241;
-}
-.App.compact .FilterPanel {
-  background-color: white;
-}
-.App .WikiFrame {
-  flex-grow: 1;
-}
+  &.compact .FilterPanel {
+    background-color: white;
+  }
+  .WikiFrame {
+    flex-grow: 1;
+  }
 
-.App.compact .expandedShow {
-  display: none;
-}
-
-.App.expanded .compactShow {
-  display: none;
+  &.compact .expandedShow {
+    display: none;
+  }
+  &.expanded .compactShow {
+    display: none;
+  }
 }

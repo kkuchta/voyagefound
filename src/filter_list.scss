@@ -5,46 +5,38 @@
   flex-direction: row;
   align-items: flex-start;
   margin-top: 9px;
+  .label {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .list {
+    margin-left: 40px;
+  }
+
+  ul {
+    padding-left: 0;
+    margin-top: 5px;
+  }
+
+  li {
+    list-style: none;
+    line-height: 12px;
+    margin-bottom: 5px;
+  }
+
+  .filterName {
+    position: relative;
+    top: 2px;
+  }
+
+  .button {
+    @include button;
+    display: inline-block;
+    padding: 4px;
+    font-size: 12px;
+    line-height: 12px;
+    margin-right: 5px;
+  }
 }
 
-.FilterList .label {
-  font-weight: bold;
-  margin-right: 5px;
-}
-
-.FilterList .list {
-  margin-left: 40px;
-}
-
-.FilterList ul {
-  padding-left: 0;
-  margin-top: 5px;
-}
-
-.FilterList li {
-  list-style: none;
-  line-height: 12px;
-  margin-bottom: 5px;
-}
-
-.FilterList .filterName {
-  position: relative;
-  top: 2px;
-}
-
-.FilterList .button {
-  @include button;
-  display: inline-block;
-  padding: 4px;
-  font-size: 12px;
-  line-height: 12px;
-  margin-right: 5px;
-}
-.FilterList .button:hover {
-  color: #98C1D9;
-  background-color: #3D5A80;
-}
-.FilterList .button:active {
-  transform: translate(0.5px, 0.5px);
-  box-shadow: none;
-}

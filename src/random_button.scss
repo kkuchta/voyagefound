@@ -5,17 +5,17 @@
   display: flex;
   flex-direction: column;
   margin-top: 9px;
+  .button {
+    @include button
+    width: 100px;
+    height: 25px;
+    margin: 5px 0;
+  }
 }
 .compact .RandomButton {
   margin-top: 0;
 }
 
-.RandomButton .button {
-  @include button
-  width: 100px;
-  height: 25px;
-  margin: 5px 0;
-}
 
 /* RGB */
 /*$color1: rgba(61, 90, 128, 1);*/
