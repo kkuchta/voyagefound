@@ -1,7 +1,8 @@
 @import 'buttons.scss';
+@import 'colors.scss';
+@import 'sizes.scss';
 
 .FilterPanel {
-  /*width: 500px;*/
   display: flex;
   padding: 10px;
 
@@ -16,10 +17,35 @@
     width: 40px;
     height: 35px;
   }
+  .divider {
+    display: none;
+  }
 }
 
 .compact .FilterPanel {
   .AddFilter {
     display: none;
+  }
+  @media(max-width: $mobileBreakpoint) {
+    .FilterList {
+      display: none;
+    }
+  }
+}
+
+.expanded .FilterPanel {
+  @media(max-width: $mobileBreakpoint) {
+    flex-direction: column;
+    .AddFilter { order: 0; }
+    .divider {
+      order: 1;
+      display: flex;
+      border-bottom: 1px solid $dark;
+      opacity: 0.3;
+      margin: 25px 60px 12px 60px;
+    }
+    .RandomButton { order: 2; }
+    .FilterList { order: 3; }
+    .toggleCompact { order: 4; }
   }
 }

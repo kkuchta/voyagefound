@@ -1,4 +1,5 @@
 @import 'buttons.scss';
+@import 'sizes.scss';
 
 .AddFilter {
   margin-left: 40px;
@@ -37,5 +38,18 @@
   }
   .highlighted {
     color: red;
+  }
+}
+
+.expanded .AddFilter {
+  @media(max-width: $mobileBreakpoint) {
+    margin-left: 0;
+
+    .labelAndInput {
+      flex-direction: column;
+    }
+    .label {
+      margin-bottom: 5px;
+    }
   }
 }

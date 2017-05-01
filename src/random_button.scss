@@ -1,5 +1,6 @@
 @import 'colors.scss';
 @import 'buttons.scss';
+@import 'sizes.scss';
 
 .RandomButton {
   display: flex;
@@ -14,6 +15,14 @@
 }
 .compact .RandomButton {
   margin-top: 0;
+}
+
+.expanded .RandomButton {
+  @media(max-width: $mobileBreakpoint) {
+    flex-direction: row;
+    justify-content: space-between;
+    line-height: 35px;
+  }
 }
 
 
