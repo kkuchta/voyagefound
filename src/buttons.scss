@@ -12,8 +12,8 @@
   box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   &:hover {
-    color: #98C1D9;
-    background-color: #3D5A80;
+    color: $medium;
+    background-color: $dark;
   }
   &:active {
     transform: translate(0.5px, 0.5px);

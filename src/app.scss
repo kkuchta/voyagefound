@@ -1,4 +1,5 @@
 @import 'sizes.scss';
+@import 'colors.scss';
 
 body, html, #root, .App {
   height: 100%;
@@ -7,11 +8,8 @@ body, html, #root, .App {
 .App {
   display: flex;
   flex-direction: column;
-  background-color: #E0FBFC;
-  color: #293241;
-  &.compact .FilterPanel {
-    background-color: white;
-  }
+  background-color: white;
+  color: $veryDark;
 
   .FilterPanel {
     flex-shrink: 0;
