@@ -1,19 +1,15 @@
 import _ from 'lodash'
 
-const localStorageKey = 'filters';
+const LOCAL_STORAGE_KEY = 'filters';
 
+const DEFAULT_FILTERS = {
+  include: ['Asia', 'Africa'],
+  exclude: ['China', 'North Korea', 'Thailand']
+};
 class FilterStore {
   constructor () {
     // Todo: load from localstorage
-    const oldFilters = JSON.parse(window.localStorage.getItem(localStorageKey));
-    if (oldFilters && oldFilters.include && oldFilters.exclude) {
-      this.filters = oldFilters;
-    } else {
-      this.filters = {
-        include: [],
-        exclude: []
-      };
-    }
+    this.loadLocalStorage();
     this.listeners = [];
   }
 
@@ -37,8 +33,17 @@ class FilterStore {
     this.listeners.forEach( (callback) => callback.call() );
   }
 
+  loadLocalStorage() {
+    const oldFilters = JSON.parse(window.localStorage.getItem(LOCAL_STORAGE_KEY));
+    if (oldFilters && oldFilters.include && oldFilters.exclude) {
+      this.filters = oldFilters;
+    } else {
+      this.filters = DEFAULT_FILTERS;
+    }
+  }
+
   updateLocalStorage() {
-    window.localStorage.setItem(localStorageKey, JSON.stringify(this.filters));
+    window.localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(this.filters));
   }
 
   getFilters () {
