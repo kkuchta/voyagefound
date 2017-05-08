@@ -109,7 +109,8 @@ class AddFilter extends Component {
             getItemValue={this.getItemValue}
             shouldItemRender={this.shouldItemRender}
             renderItem={this.renderItem}
-            inputProps={{placeholder:'New Zealand...'}}
+            inputProps={{placeholder: 'New Zealand...'}}
+            wrapperProps={{className: 'inputWrapper', style: {}}}
           />
         </div>
         <div className='createFilterButtons' style={buttonStyle}>

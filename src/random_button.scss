@@ -11,6 +11,9 @@
     width: 100px;
     height: 25px;
     margin: 5px 0;
+    @media(max-width: $mobileBreakpoint) {
+      width: 140px;
+    }
   }
 }
 .compact .RandomButton {
@@ -22,6 +25,10 @@
     flex-direction: row;
     justify-content: space-between;
     line-height: 35px;
+
+    .inTheWorld {
+      display: none;
+    }
   }
 }
 
