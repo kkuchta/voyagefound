@@ -60,7 +60,7 @@ class AddFilter extends Component {
 
   renderItem(item, isHighlighted) {
     return (<div
-      className={isHighlighted ? 'highlighted' : ''}
+      className={'item' + (isHighlighted ? ' highlighted' : '')}
       key={item.join(' < ')}
     >
       {_.truncate(item.join(' < '), { length: 50 })}
@@ -96,6 +96,18 @@ class AddFilter extends Component {
 
   render() {
     const buttonStyle = this.state.selected ? {} : { display: 'none' };
+
+    // Just the default menu styles from react-autocomplete, but with the
+    // background-color removed so our css can set it.
+    const menuStyle = {
+      borderRadius: '3px',
+      boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
+      padding: '2px 0',
+      fontSize: '90%',
+      position: 'fixed',
+      overflow: 'auto',
+      maxHeight: '50%'
+    };
     return (
       <div className='AddFilter'>
         <div className='labelAndInput'>
@@ -111,6 +123,7 @@ class AddFilter extends Component {
             renderItem={this.renderItem}
             inputProps={{placeholder: 'New Zealand...'}}
             wrapperProps={{className: 'inputWrapper', style: {}}}
+            menuStyle={menuStyle}
           />
         </div>
         <div className='createFilterButtons' style={buttonStyle}>

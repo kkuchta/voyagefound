@@ -1,5 +1,6 @@
 @import 'buttons.scss';
 @import 'sizes.scss';
+@import 'colors.scss';
 
 .AddFilter {
   margin-left: 40px;
@@ -19,12 +20,16 @@
     border-radius: 4px;
     padding: 5px 10px;
     border: 1px solid rgba(152, 193, 217, 0.5);
-
+    background-color: $lightMedium;
   }
   .inputWrapper {
     @media(max-width: $mobileBreakpoint) {
       display: flex;
     }
+  }
+  .item {
+    padding: 5px;
+    background-color: $light;
   }
   .createFilterButtons {
     display: flex;
@@ -43,7 +48,8 @@
     font-size: 12px;
   }
   .highlighted {
-    color: red;
+    background-color: $medium;
+    color: $light;
   }
 }
 

@@ -1,11 +1,27 @@
-$veryDark: #293241;
-$dark: #3D5A80;
-$medium: #98C1D9;
-$light: #E0FBFC;
+$color1: rgba(45, 225, 252, 1);
+$color2: rgba(42, 252, 152, 1);
+$color3: rgba(9, 232, 94, 1);
+$color4: rgba(22, 193, 114, 1);
+$color5: rgba(33, 79, 75, 1);
 
+$veryDark: $color5;
+$dark: $color5;
+$medium: $color4;
+$lightMedium: $color3;
+$light: $color2;
+
+
+//https://coolors.co/2de1fc-2afc98-09e85e-16c172-214f4b
+
+// Original:
+
+//$veryDark: #293241;
+//$dark: #3D5A80;
+//$medium: #98C1D9;
+//$light: #E0FBFC;
 /*https://coolors.co/3d5a80-98c1d9-e0fbfc-ee6c4d-293241*/
-/*$color1: rgba(61, 90, 128, 1);*/
-/*$color2: rgba(152, 193, 217, 1);*/
-/*$color3: rgba(224, 251, 252, 1);*/
-/*$color4: rgba(238, 108, 77, 1);*/
-/*$color5: rgba(41, 50, 65, 1);*/
+//$color1: rgba(61, 90, 128, 1);
+//$color2: rgba(152, 193, 217, 1);
+//$color3: rgba(224, 251, 252, 1);
+//$color4: rgba(238, 108, 77, 1);
+//$color5: rgba(41, 50, 65, 1);
