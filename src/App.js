@@ -85,9 +85,14 @@ class WikiFrame extends Component {
   }
   render() {
     return (
-      <iframe className='WikiFrame' src={this.url(this.props.pageTitle)} />
+      // I can find no good way to get an iframe to be responsive and scrolling
+      // on both desktop and mobile.  For more details see:
+      // stackoverflow.com/questions/43732449/iframe-thats-vertically-scrollable-and-responsive-in-both-ios-safari-and-deskto
+      <div className='WikiFrame'>
+        <iframe className='mobile' scrolling='no' src={this.url(this.props.pageTitle)} />
+        <iframe className='desktop' src={this.url(this.props.pageTitle)} />
+      </div>
     )
-    //return (<div />)
   }
 }
 

@@ -12,8 +12,9 @@ body, html, #root, .App {
   &.compact .FilterPanel {
     background-color: white;
   }
-  .WikiFrame {
-    flex-grow: 1;
+
+  .FilterPanel {
+    flex-shrink: 0;
   }
 
   &.compact .expandedShow {
@@ -21,5 +22,22 @@ body, html, #root, .App {
   }
   &.expanded .compactShow {
     display: none;
+  }
+}
+
+.WikiFrame {
+  height: 100%;
+  iframe {
+    height: 100%;
+    width: 1px;
+    min-width: 100%;
+    border: none;
+  }
+
+  @media(max-device-width: $mobileBreakpoint) {
+    .desktop { display: none; }
+  }
+  @media(min-device-width: $mobileBreakpoint + 1) {
+    .mobile { display: none; }
   }
 }
