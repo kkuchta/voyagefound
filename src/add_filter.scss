@@ -53,6 +53,7 @@
   }
   .aboutLink {
     color: $veryDark;
+    margin-top: -3px;
     @media(max-width: $mobileBreakpoint) {
       margin-top: 10px;
     }
