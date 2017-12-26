@@ -81,7 +81,7 @@ class AddFilter extends Component {
   addFilter(isInclude) {
     const filter = this.state.selected[0];
     this.props.filterStore.addFilter(filter, isInclude);
-    this.setState({ value: '' });
+    this.setState({ value: '', selected: null });
   }
 
   renderCreateFilter(isInclude) {
@@ -97,6 +97,7 @@ class AddFilter extends Component {
 
   render() {
     const buttonStyle = this.state.selected ? {} : { display: 'none' };
+    const aboutLinkStyle = this.state.selected ? { display: 'none' } : {};
 
     // Just the default menu styles from react-autocomplete, but with the
     // background-color removed so our css can set it.
@@ -127,6 +128,9 @@ class AddFilter extends Component {
             menuStyle={menuStyle}
           />
         </div>
+        <a className='aboutLink' style={aboutLinkStyle} href='https://google.com'>
+          About
+        </a>
         <div className='createFilterButtons' style={buttonStyle}>
           {this.renderCreateFilter(true)}
           {this.renderCreateFilter(false)}

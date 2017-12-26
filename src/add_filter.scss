@@ -51,6 +51,12 @@
     background-color: $medium;
     color: $light;
   }
+  .aboutLink {
+    color: $veryDark;
+    @media(max-width: $mobileBreakpoint) {
+      margin-top: 10px;
+    }
+  }
 }
 
 .expanded .AddFilter {
