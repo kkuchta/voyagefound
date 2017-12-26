@@ -11,7 +11,7 @@ class RandomButton extends Component {
           </div>
         </div>
         <div className='expandedShow'>
-          place<span className='inTheWorld'>in the world</span>
+          place <span className='inTheWorld'>in the world</span>
         </div>
       </div>
     );

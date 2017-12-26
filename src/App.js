@@ -42,7 +42,7 @@ class App extends Component {
     const newPage = this.pagePicker.randomPage()
     if (!newPage) {
       // Todo: handle null random page (probably because of conflicting filters)
-      alert("Oh no- no page found!  You may have mutually exclusive filters (eg you're looking for places that are in China but not in Asia).  Try adjusting your filters and trying again.");
+      alert("Sorry! No places match your filters!  You may have mutually exclusive filters (eg you're looking for places that are in China but not in Asia).  Maybe adjust your filters and trying again?");
     }
     const newPageTitle = newPage[0]
     this.setState({ pageTitle: newPageTitle });
@@ -52,7 +52,6 @@ class App extends Component {
     const newCompact = !this.state.compact;
     this.setState({ compact: newCompact });
     localStorage.setItem('compact', newCompact);
-    console.log('compact now = ', this.state.compact);
   }
 
   render() {
