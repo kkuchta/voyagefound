@@ -128,7 +128,7 @@ class AddFilter extends Component {
             menuStyle={menuStyle}
           />
         </div>
-        <a className='aboutLink' style={aboutLinkStyle} href='https://google.com'>
+        <a className='aboutLink' style={aboutLinkStyle} href='http://kevinkuchta.com/voyagefound/'>
           About
         </a>
         <div className='createFilterButtons' style={buttonStyle}>
