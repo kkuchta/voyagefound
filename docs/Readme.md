@@ -22,4 +22,4 @@ Back to the app: [https://voyagefound.com](https://voyagefound.com)
 
 Code (and a more thorough writeup): [https://github.com/kkuchta/wikiexplorer](https://github.com/kkuchta/wikiexplorer)
 
-Author: [https://kevinkuchta.com](https://kevinkuchta.com)
+Author: [http://kevinkuchta.com](http://kevinkuchta.com)
