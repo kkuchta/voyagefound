@@ -1,4 +1,5 @@
-![explanatory gif](https://i.imgur.com/GIghhde.gif)
+![explanatory gif](https://i.imgur.com/nniyzzi.gif)
+
 # About
 
 VoyageFound is a tool for browsing random WikiVoyage.org pages, but filterable.  For more about it, see [this page](http://kevinkuchta.com/voyagefound/).
