@@ -1,5 +1,4 @@
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/Wfntn"><a href="//imgur.com/Wfntn"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-
+![explanatory gif](https://i.imgur.com/GIghhde.gif)
 # About
 
 VoyageFound is a tool for browsing random WikiVoyage.org pages, but filterable.  For more about it, see [this page](http://kevinkuchta.com/voyagefound/).
