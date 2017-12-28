@@ -2,6 +2,8 @@ I like browsing random locations on Wikivoyage, a wikipedia-like travel site, to
 
 VoyageFound is a tool I built on top of Wikivoyage.  It lets you jump to a random page, subject to filters you can define.  For example, if you want to leave out all of the US, you can add "United States" to the exclude filter.  If you want to search for places in Asia but you've already been to a few countries, you can include Asia but exclude Vietnam and Thailand.
 
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/Wfntn"><a href="//imgur.com/Wfntn"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
 You can set filters at any level of granularity from continents to small towns.  The different kinds of places you can select are pulled from wikivoyage's data dumps.
 
 From a tech perspective, this is built with react (as a beginner learning project).  The script to pull data from the data dump is ruby.  This is deployed on S3 behind Cloudfront with Route53 for the DNS.
