@@ -8,6 +8,8 @@ You can set filters at any level of granularity from continents to small towns. 
 
 From a tech perspective, this is built with react (as a beginner learning project).  The script to pull data from the data dump is ruby.  This is deployed on S3 behind Cloudfront with Route53 for the DNS.
 
-Back to the app: https://voyagefound.com
-Code: https://github.com/kkuchta/wikiexplorer
-Author: https://kevinkuchta.com
+Back to the app: [https://voyagefound.com](https://voyagefound.com)
+
+Code: [https://github.com/kkuchta/wikiexplorer](https://github.com/kkuchta/wikiexplorer)
+
+Author: [https://kevinkuchta.com](https://kevinkuchta.com)
